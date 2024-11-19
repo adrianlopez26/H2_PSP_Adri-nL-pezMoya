@@ -26,7 +26,10 @@ public class Cliente {
                 System.out.println("3. Actualizar un libro existente");
                 System.out.println("4. Eliminar un libro");
                 System.out.println("5. Buscar libros por año");
-                System.out.println("6. Salir");
+                System.out.println("6. Buscar libro por ID");
+                System.out.println("7. Buscar libros por título");
+                System.out.println("8. Buscar libros por autor");
+                System.out.println("9. Salir");
                 System.out.print("Selecciona una opción: ");
                 int opcion = scanner.nextInt();
                 scanner.nextLine(); // Limpiar el buffer
@@ -93,6 +96,38 @@ public class Cliente {
                         break;
 
                     case 6:
+                        salida.println("BUSCAR_POR_ID");
+                        System.out.print("ID: ");
+                        int id = scanner.nextInt();
+                        scanner.nextLine(); // Limpiar el buffer
+                        salida.println(id);
+                        System.out.println("\n--- Libro con ID " + id + " ---");
+                        System.out.println(entrada.readLine());
+                        break;
+
+                    case 7:
+                        salida.println("BUSCAR_POR_TITULO");
+                        System.out.print("Título: ");
+                        String titulo = scanner.nextLine();
+                        salida.println(titulo);
+                        System.out.println("\n--- Libros con título \"" + titulo + "\" ---");
+                        while ((respuesta = entrada.readLine()) != null && !respuesta.isEmpty()) {
+                            System.out.println(respuesta);
+                        }
+                        break;
+
+                    case 8:
+                        salida.println("BUSCAR_POR_AUTOR");
+                        System.out.print("Autor: ");
+                        String autor = scanner.nextLine();
+                        salida.println(autor);
+                        System.out.println("\n--- Libros del autor \"" + autor + "\" ---");
+                        while ((respuesta = entrada.readLine()) != null && !respuesta.isEmpty()) {
+                            System.out.println(respuesta);
+                        }
+                        break;
+
+                    case 9:
                         System.out.println("Saliendo del programa...");
                         salir = true;
                         break;
